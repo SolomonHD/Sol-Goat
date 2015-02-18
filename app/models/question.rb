@@ -8,4 +8,10 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :options,
       :allow_destroy => true,
       :reject_if     => :all_blank
+
+def self.count_by_type
+  self.all.count
+end
+
+
 end
